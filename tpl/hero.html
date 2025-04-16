@@ -1,10 +1,61 @@
 <section id="home" class="hero">
-    <div class="container">
-        <h1>مجموعة دلبا</h1>
-        <p>رواد التطور الاقتصادي في المملكة العربية السعودية</p>
-        <div class="hero-buttons">
-            <a href="#about" class="btn btn-primary btn-lg">تعرف علينا</a>
-            <a href="#contact" class="btn btn-outline-light btn-lg">اتصل بنا</a>
+    <div class="slider">
+        <div class="slide">
+            <div class="slide-layer">
+                <h1>مجموعة دلبا - الشريحة 1</h1>
+                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 1</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-layer">
+                <h1>مجموعة دلبا - الشريحة 2</h1>
+                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 2</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-layer">
+                <h1>مجموعة دلبا - الشريحة 3</h1>
+                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 3</p>
+            </div>
+        </div>
+        <div class="slider-buttons">
+            <div class="prev-button-container">
+                <button class="prev-slide" onclick="prevSlide()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="next-button-container">
+                <button class="next-slide" onclick="nextSlide()"><i class="fas fa-chevron-left"></i></button>
+            </div>
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initial slide
+        showSlide(currentSlide);
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Make nextSlide and prevSlide globally accessible
+        window.nextSlide = nextSlide;
+        window.prevSlide = prevSlide;
+    });
+</script>

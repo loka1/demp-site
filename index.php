@@ -8,22 +8,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <?php include 'tpl/navbar.html'; ?>
     <?php include 'tpl/hero.html'; ?>
-    <?php include 'tpl/about.html'; ?>
-    <?php include 'tpl/services.html'; ?>
-    <?php include 'tpl/projects.html'; ?>
-    <?php include 'tpl/partners.html'; ?>
-    <?php include 'tpl/news.html'; ?>
-    <?php include 'tpl/gallery.html'; ?>
-    <?php include 'tpl/contact.html'; ?>
-    <?php include 'tpl/stats.html'; ?>
-    <?php include 'tpl/testimonials.html'; ?>
-    <?php include 'tpl/faq.html'; ?>
-    <?php include 'tpl/footer.html'; ?>
+    <?php
+    $sections = [
+        'tpl/about.html' => 'animate__lightSpeedInRight',
+        'tpl/vision.html' => 'animate__lightSpeedInLeft',
+        'tpl/mission.html' => 'animate__lightSpeedInRight',
+        'tpl/services.html' => 'animate__lightSpeedInLeft',
+        'tpl/projects.html' => 'animate__lightSpeedInRight',
+        'tpl/partners.html' => 'animate__lightSpeedInLeft',
+        'tpl/news.html' => 'animate__lightSpeedInRight',
+        'tpl/gallery.html' => 'animate__lightSpeedInLeft',
+        'tpl/stats.html' => 'animate__lightSpeedInRight',
+        'tpl/contact.html' => 'animate__lightSpeedInLeft',
+        'tpl/testimonials.html' => 'animate__lightSpeedInRight',
+        'tpl/faq.html' => 'animate__lightSpeedInLeft',
+        'tpl/footer.html' => 'animate__lightSpeedInRight',
+    ];
+
+    foreach ($sections as $template => $animation) {
+        echo "<section class=\"animate-on-scroll\" data-animation=\"$animation\">";
+        include $template;
+        echo "</section>";
+    }
+    ?>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -58,5 +74,6 @@
             }, 500);
         });
     </script>
+        <script src="js/scroll-animation.js"></script>
 </body>
 </html>
