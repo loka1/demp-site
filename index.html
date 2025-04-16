@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalba Group - مجموعة دلبا | رواد التطور الاقتصادي</title>
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/U.png" alt="Dalba Group Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">المميزات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#news">منتجاتنا</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#partners">شركاؤنا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#news">الأخبار</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">معرض الشهادت
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">اتصل بنا</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    <style>
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 77, 64, 0.8), rgba(0, 77, 64, 0.8));
+                /* url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background: rgba(44, 62, 80, 0.7);
+    }
+    50% {
+        background: rgba(44, 62, 80, 0.5);
+    }
+    100% {
+        background: rgba(44, 62, 80, 0.7);
+    }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Hero Slider Styles */
+.hero .slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .slide.active {
+    opacity: 1;
+}
+
+.hero .slide-layer {
+    color: #fff;
+    padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero .slider-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.hero .slider-buttons button {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+
+.hero .slider-buttons button:hover {
+    color: var(--accent-color);
+}
+
+.hero .slide-layer h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+</style>
+<section id="home" class="hero">
+    <div class="slider">
+        <div class="slide" data-image="images/slider/1.jpg">
+            <div class="slide-layer">
+                <h1>عزل حراري عالي الجودة بمعايير أمريكية وسعودية</h1>
+                <p>نقدم حلول عزل حراري متطورة تتوافق مع أعلى المعايير.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+            </div>
+        </div>
+        <div class="slide" data-image="images/slider/2.jpg">
+            <div class="slide-layer">
+                <h1>صناديق تعبئة مبتكرة تلبي احتياجك الزراعي</h1>
+                <p>صناديق تعبئة مصممة خصيصًا لتلبية احتياجات القطاع الزراعي.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+            </div>
+        </div>
+        <div class="slide" data-image="images/slider/3.jpg">
+            <div class="slide-layer">
+                <h1>منتجات مقاومة للحريق بتقنيات تصنيع متقدمة</h1>
+                <p>منتجات عزل وحماية متطورة بتقنيات تصنيع مبتكرة.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+            </div>
+        </div>
+        <div class="slider-buttons">
+            <div class="prev-button-container">
+                <button class="prev-slide" onclick="prevSlide()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="next-button-container">
+                <button class="next-slide" onclick="nextSlide()"><i class="fas fa-chevron-left"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            const slide = slides[index];
+            slide.classList.add('active');
+            const image = slide.dataset.image;
+            slide.style.backgroundImage = `url('${image}')`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initial slide
+        showSlide(currentSlide);
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Make nextSlide and prevSlide globally accessible
+        window.nextSlide = nextSlide;
+        window.prevSlide = prevSlide;
+    });
+</script>    <section class="animate-on-scroll" data-animation="1animate__fadeInLeft"><style>
+
+/* About Section */
+.about {
+    background-color: var(--light-bg);
+    padding: 100px 0;
+}
+
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.stat-item .counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.highlighted-text {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.highlighted-text:hover {
+    color: var(--secondary-color);
+}
+</style>
+<section id="about" class="about">
+    <div class="container">
+        <h2>من نحن</h2>
+        <div class="about-content row ">
+            <div class="col-md-6">
+                <div class="about-text">
+                    <p>
+                        نحن في <strong class="highlighted-text">شركة دلبا الصناعية</strong> بدأنا رحلتنا عام 2006 من مدينة الخرج، بدافع من رؤيتنا لتقديم حلول صناعية تواكب تطلعات السوق الزراعي المحلي. انطلقنا بإنتاج صناديق الخضار وصواني التشتيل لتلبية احتياجات شركائنا في القطاع الزراعي، ومع مرور السنوات توسعنا بخطى واثقة نحو مجالات جديدة، كان أبرزها تصنيع المواد العازلة باستخدام مادة البوليسترين (EPS).
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-industry"></i>
+                            <span class="counter">4</span>
+                            <br>
+                            <span>قطاعات رئيسية</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-certificate"></i>
+                            <span class="counter">150</span>
+                            <br>
+                            <span>معتمدون</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-handshake"></i>
+                            <span class="counter">100</span>
+                            <br>
+                            <span>شريك نجاح</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="counter">24/7</span>
+                            <br>
+                            <span>دعم فني</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about-video">
+                    <video id="about-video" class="lazy" preload="none" width="400" height="300" poster="/images/about/video-placeholder.jpg" style="controls: none; cursor: pointer;">
+                        <source src="/images/about/WhatsApp Video 2025-04-16 at 10.59.43 AM.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <script>
+                        document.getElementById('about-video').addEventListener('click', function() {
+                            var video = this;
+                            video.controls = true;
+                            video.load();
+                            video.play();
+                        });
+                    </script>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section><section class="animate-on-scroll" data-animation="1animate__fadeInRight"><style>
+
+/* Vision and Mission Sections */
+.vision, .mission {
+    padding: 100px 0;
+}
+
+.vision .row, .mission .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.vision .col-md-6, .mission .col-md-6 {
+    padding: 20px;
+}
+
+.vision img, .mission img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.vision h2, .mission h2 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: right;
+    transform: translateX(-5%);
+
+}
+
+.vision p, .mission p {
+    line-height: 1.8;
+
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision h2::after, .mission h2::after {
+    right: 0;
+    left: auto;
+}
+</style>
+<section id="vision" class="vision py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="images/رؤيتنا.jpg" alt="Vision Image" class="img-fluid rounded animate__animated animate__bounceIn">
+            </div>
+            <div class="col-md-6">
+                <h2>رؤيتنا</h2>
+                <p>نحن في شركة دلبا للعزل الحراري وضعنا رؤيتنا منذ اليوم الأول لنكون من بين الشركات الرائدة في المملكة العربية السعودية ودول مجلس التعاون الخليجي. نطمح إلى أن نكون الخيار الأول في مجالات العزل الحراري، والتعبئة والتغليف، وكافة منتجات البوليسترين.</p>
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__zoomIn"><section id="mission" class="mission py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2>رسالتنا</h2>
+                <p>نحن في شركة دلبا الصناعية نضع الجودة في صميم كل ما نقوم به. نلتزم بتطبيق معايير ISO العالمية في نظام إدارة الجودة، مما يساعدنا على تطوير عملياتنا الإنتاجية باستمرار وتقديم منتجات بوليسترين عالية الجودة تُستخدم في العزل الحراري والتعبئة والتغليف.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="images/رسالتنا.jpg" alt="Mission Image" class="img-fluid rounded animate__animated animate__bounceIn">
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__fadeInLeft"><style>
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background: #fff;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card .content {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+.service-card:hover h3::after {
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(0%);
+
+}
+
+.service-card p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+</style><section id="services" class="services">
+    <div class="container">
+        <h2>المميزات</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="content">
+                    <i class="fas fa-box-open fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>منتجات عزل متنوعة</h3>
+                    <p>نقدم مجموعة واسعة من منتجات العزل لتلبية جميع احتياجاتك.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="content">
+                    <i class="fas fa-truck fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>توصيل سريع لجميع المناطق</h3>
+                    <p>نضمن توصيل سريع وموثوق لجميع منتجاتنا إلى أي مكان.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="content">
+                    <i class="fas fa-tags fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>أسعار منافسة وعروض للمشاريع الكبيرة</h3>
+                    <p>نقدم أسعارًا تنافسية وعروضًا خاصة للمشاريع الكبيرة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="content">
+                    <i class="fas fa-comments fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>استشارات مجانية للمشاريع الجديدة</h3>
+                    <p>نقدم استشارات مجانية لمساعدتك في التخطيط لمشاريعك الجديدة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__fadeInLeft"><style>
+
+/* News Section */
+.news {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 100px 0;
+}
+
+.news h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 20px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.news-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+.news-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.news-date {
+    display: inline-block;
+    color: #fff;
+    background: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.news-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+</style>
+<section id="news" class="news">
+    <div class="container">
+        <h2>آخر منتجاتنا</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="images/products/الواح البوليسترين المبثوق.png" alt="الواح البوليسترين المبثوق XPS" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>الواح البوليسترين المبثوق XPS</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/بلوك هوردي.png" alt="بلوك هوردي" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>بلوك هوردي</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/الألواح (الشيت).png" alt="الألواح (الشيت)" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>الألواح (الشيت)</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/البلوك انسيرت (ثيرمو).jpg" alt="البلوك انسيرت (ثيرمو)" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>البلوك انسيرت (ثيرمو)</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/صنادق الخضار.png" alt="صنادق الخضار" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>صنادق الخضار</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/الاوفرلاب المدد.png" alt="الاوفرلاب المدد" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>الاوفرلاب المدد</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/صواني التشتيل الزراعية.png" alt="صواني التشتيل الزراعية" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>صواني التشتيل الزراعية</h3>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="images/products/ديكورات البوليسترين.jpg" alt="ديكورات البوليسترين" loading="lazy" width="400" height="300">
+                <div class="news-content">
+                    <h3>ديكورات البوليسترين</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__fadeInRight"><style>
+    .gallery-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: grayscale(100%);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.gallery-grid {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.gallery-item {
+    margin: 10px;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img:active {
+    border: 3px solid var(--primary-color);
+}
+
+/* Slideshow Styles */
+.slideshow-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scroll */
+}
+
+.slideshow-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slideshow-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+</style>
+<section id="gallery" class="gallery">
+    <div class="container">
+        <h2>معرض الشهادت</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/cer/1.jpg" alt="صورة 1" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/2.jpg" alt="صورة 2" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/3.jpg" alt="صورة 3" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/4.jpg" alt="صورة 4" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/5.jpg" alt="صورة 5" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/6.jpg" alt="صورة 6" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/7.jpg" alt="صورة 7" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        let currentImageIndex = 0;
+        let images = [];
+        let slideshowOverlay;
+        let slideshowImage;
+        let closeButton;
+        let prevButton;
+        let nextButton;
+
+        galleryImages.forEach((img, index) => {
+            images.push(img.src);
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                showSlideshow(currentImageIndex);
+            });
+        });
+
+        function createSlideshow() {
+            slideshowOverlay = document.createElement('div');
+            slideshowOverlay.id = 'slideshow-overlay';
+            slideshowOverlay.classList.add('slideshow-overlay');
+
+            closeButton = document.createElement('span');
+            closeButton.classList.add('close-button');
+            closeButton.innerHTML = '&times;';
+
+            const slideshowContent = document.createElement('div');
+            slideshowContent.classList.add('slideshow-content');
+
+            slideshowImage = document.createElement('img');
+            slideshowImage.classList.add('slideshow-image');
+            slideshowImage.alt = 'Slideshow Image';
+
+            const navigationButtons = document.createElement('div');
+            navigationButtons.classList.add('navigation-buttons');
+
+            prevButton = document.createElement('button');
+            prevButton.classList.add('prev-button');
+            prevButton.innerHTML = '<';
+
+            nextButton = document.createElement('button');
+            nextButton.classList.add('next-button');
+            nextButton.innerHTML = '>';
+
+            navigationButtons.appendChild(prevButton);
+            navigationButtons.appendChild(nextButton);
+
+            slideshowContent.appendChild(slideshowImage);
+            slideshowContent.appendChild(navigationButtons);
+            slideshowOverlay.appendChild(closeButton);
+            slideshowOverlay.appendChild(slideshowContent);
+
+            document.body.appendChild(slideshowOverlay);
+
+            closeButton.addEventListener('click', closeSlideshow);
+            prevButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showSlideshow(currentImageIndex);
+            });
+            nextButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showSlideshow(currentImageIndex);
+            });
+            slideshowOverlay.addEventListener('click', (event) => {
+                if (event.target === slideshowOverlay) {
+                    closeSlideshow();
+                }
+            });
+        }
+
+        function showSlideshow(index) {
+            if (!slideshowOverlay) {
+                createSlideshow();
+            }
+            slideshowImage.src = images[index];
+            slideshowOverlay.style.display = 'flex';
+            document.body.classList.add('slideshow-active');
+            document.querySelector('nav.navbar').style.display = 'none';
+            document.querySelector('footer.footer').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSlideshow() {
+            slideshowOverlay.style.display = 'none';
+            document.body.classList.remove('slideshow-active');
+            document.querySelector('nav.navbar').style.display = 'block';
+            document.querySelector('footer.footer').style.display = 'block';
+            document.body.style.overflow = 'auto';
+        }
+    });
+</script></section><section class="animate-on-scroll" data-animation="1animate__zoomIn"><section id="stats" class="stats py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">احصائيات</h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-item" data-count="150">
+                    <i class="fas fa-building fa-3x mb-3"></i>
+                    <h3 class="counter">25</h3>
+                    <p>مشروع منجز</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item" data-count="50">
+                    <i class="fas fa-users fa-3x mb-3"></i>
+                    <h3 class="counter">150</h3>
+                    <p>عميل سعيد</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item" data-count="25">
+                    <i class="fas fa-award fa-3x mb-3"></i>
+                    <h3 class="counter">50</h3>
+                    <p>جائزة</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item" data-count="10">
+                    <i class="fas fa-globe fa-3x mb-3"></i>
+                    <h3 class="counter">10</h3>
+                    <p>فرع</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__fadeInLeft"><style>
+
+/* Contact Section */
+.contact {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contact-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p,.contact-item a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.1);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form button i {
+    margin-left: 0.5rem;
+}
+
+</style>
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>اتصل بنا</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>العنوان</h3>
+                    <p><a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City">المدينة الصناعية بالخرج ( مدن )</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>الهاتف</h3>
+                    <p><a href="tel:+966556865245">+966 55 686 5245</a></p>
+                </div>
+                 <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Whatsapp</h3>
+                    <p><a href="https://wa.me/966556865245">+966 55 686 5245</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p><a href="mailto:Sales.xps@dalba.com.sa">Sales.xps@dalba.com.sa</a></p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>أرسل لنا رسالة</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">المدينة</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">نوع المشروع</label>
+                        <input type="text" id="projectType" name="projectType" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote">احصل على عرض سعر</label>
+                        <textarea id="quote" name="quote" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        إرسال الرسالة
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section><section class="animate-on-scroll" data-animation="1animate__zoomIn"><style>
+
+/* FAQ Section */
+.faq {
+    background-color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+</style>
+<section id="faq" class="faq py-5">
+    <div class="container">
+        <h3 class="text-center mb-5">الأسئلة الشائعة</h3>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        ما هو البوليسترين المستخدم في العزل الحراري؟
+                    </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        البوليسترين هو مادة خفيفة الوزن تُستخدم في أنظمة العزل الحراري بسبب قدرتها العالية على تقليل انتقال الحرارة. وتوفر شركة دلبا للعزل في الرياض أفضل أنواع البوليسترين المصنّع خصيصًا لعزل المباني بكفاءة عالية وتوفير استهلاك الطاقة.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        ما الفرق بين البوليسترين الممدد (EPS) والمبثوق (XPS)؟
+                    </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        توفر دلبا للعزل نوعين من البوليسترين:
+                        <br><br>
+                        EPS (ممدد): حبيبات خفيفة الوزن واقتصادية، مناسبة للجدران والأسقف.
+                        <br><br>
+                        XPS (مبثوق): أكثر كثافة ومتانة، مثالي للأسطح والأرضيات ويتحمل الضغط والرطوبة العالية.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        هل البوليسترين مقاوم للرطوبة والعفن؟
+                    </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        نعم، منتجات دلبا للعزل من البوليسترين مقاومة للرطوبة ولا تمتص الماء بسهولة، مما يمنع تكوّن العفن ويضمن أداء طويل الأمد وفعالية في مختلف الظروف البيئية.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                         هل العزل بالبوليسترين آمن وصديق للبيئة؟
+                    </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        البوليسترين المستخدم في دلبا للعزل آمن تمامًا وخالٍ من المواد السامة. كما أن بعض أنواعه قابلة لإعادة التدوير، مما يجعله خيارًا بيئيًا مثاليًا في مشاريع البناء المستدام.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                         ما هي استخدامات العزل بالبوليسترين؟
+                    </button>
+                </h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        تستخدم منتجات دلبا للعزل في مجموعة واسعة من تطبيقات العزل الحراري، منها:
+                        <ul>
+                            <li>الجدران والأسقف</li>
+                            <li>الأرضيات</li>
+                            <li>غرف التبريد</li>
+                            <li>خزانات المياه</li>
+                            <li>الفلل والمباني التجارية والسكنية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                         ما مدى فعالية البوليسترين في تقليل استهلاك الكهرباء؟
+                    </button>
+                </h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        بفضل خصائص العزل الفعالة التي يتميز بها البوليسترين من دلبا للعزل، يمكن تقليل استهلاك الكهرباء بنسبة تتراوح بين 40% إلى 60%، مما ينعكس بشكل مباشر على خفض تكاليف الطاقة.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                         كم يدوم العزل الحراري المصنوع من البوليسترين؟
+                    </button>
+                </h3>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        تتميز منتجات دلبا للعزل بعمر افتراضي طويل، قد يتجاوز 30 سنة عند التركيب الصحيح وفي بيئة محمية من العوامل الخارجية، مما يجعلها استثمارًا طويل الأمد.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                         هل يمكن تفصيل البوليسترين حسب المقاسات المطلوبة؟
+                    </button>
+                </h3>
+                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        نعم، لدى دلبا للعزل إمكانية تصنيع وتقطيع ألواح البوليسترين حسب المقاسات والسمك المطلوب بدقة، لتلبية احتياجات المشاريع بمختلف أحجامها.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__fadeInLeft"><style>
+
+/* Footer */
+.footer {
+    background-color: var(--dark-bg);
+    color: #fff;
+}
+
+.footer-top {
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.footer-section.about p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.footer-section .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-section .contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section .contact-info i {
+    color: var(--accent-color);
+}
+
+.socials {
+    
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section ul a:hover {
+    color: var(--accent-color);
+    transform: translateX(-5px);
+}
+
+.footer-section ul a i {
+    font-size: 0.8rem;
+
+}
+
+.footer-bottom {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+
+.footer-section img.logo{
+    width: 200px;
+}
+
+</style>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img class="logo" src="images/footer/logo.png" alt="Dalba Group Logo" >
+                    
+                </div>
+                <div class="footer-section">
+                    <p>مجموعة دلبا هي شركة رائدة في مجال الخدمات المتكاملة، نسعى دائماً لتقديم أفضل الحلول لعملائنا بأعلى معايير الجودة والاحترافية.</p>
+                </div>
+                <div class="footer-section links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+                        <li><a href="#about"><i class="fas fa-user"></i> من نحن</a></li>
+                        <li><a href="#services"><i class="fas fa-cogs"></i> المميزات</a></li>
+                        <li><a href="#news"><i class="fas fa-newspaper"></i> منتجاتنا</a></li>
+                        <li><a href="#gallery"><i class="fas fa-images"></i> معرض الشهادت</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>معلومات الاتصال</h4>
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City"><i class="fas fa-map-marker-alt"></i> المدينة الصناعية بالخرج ( مدن )</a>
+                        </li>
+                        <li>
+                            <a href="tel:+966556865245"><i class="fas fa-phone"></i> +966 55 686 5245</a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/966556865245"><i class="fab fa-whatsapp"></i> +966 55 686 5245</a>
+                        </li>
+                        <li>
+                            <a href="mailto:Sales.xps@dalba.com.sa"><i class="fas fa-envelope"></i> Sales.xps@dalba.com.sa</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 text-left">
+                    <p class="copyright">&copy; 2024 مجموعة دلبا. جميع الحقوق محفوظة</p>
+                </div>
+                    <div class="col-6 text-right socials">
+                        <a href="https://www.youtube.com/@DalbaindustrialCo" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/dalba.poly" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</footer></section>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Waypoints for triggering animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <!-- Counter Up for statistics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+
+        // Counter animation
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+        // Smooth scrolling
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - 70
+            }, 500);
+        });
+    </script>
+        <script src="js/scroll-animation.js"></script>
+</body>
+</html>

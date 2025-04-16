@@ -1,27 +1,18 @@
-# Refactoring Plan: Move Styles from styles.css to TPL Files
+## Refactoring Plan
 
-**Objective:** Move the styles from `styles.css` into the individual HTML files located in the `tpl/` directory. The styles should be placed within `<style>` tags at the beginning of each HTML file, before the existing `<style>` tags.
+**Task:** Replace the old questions in `tpl/faq.html` with new questions.
 
 **Plan:**
 
-1.  **Extract the content of `styles.css`:** Use the `read_file` tool to get the complete CSS code from the `styles.css` file.
-2.  **Iterate through the files in the `tpl/` directory:** Use the `list_files` tool to get a list of all files in the `tpl/` directory.
-3.  **For each HTML file in `tpl/`:**
-    *   Read the content of the HTML file using the `read_file` tool.
-    *   Construct the `<style>` tag containing the CSS from `styles.css`.
-    *   Insert the `<style>` tag at the beginning of the HTML file using the `insert_content` tool.
-4.  **Delete the `styles.css` file:** After moving the styles to the individual files, use the `execute_command` tool to delete the `styles.css` file.
-5.  **Present the result:** Once all files have been modified and `styles.css` has been deleted, use the `attempt_completion` tool to inform the user that the task is complete.
+1.  **Analyze the existing HTML structure:** Understand how the FAQ section is structured in `tpl/faq.html`. Identify the elements that contain the questions and answers.
+2.  **Prepare the new FAQ content:** Format the provided questions and answers into the same HTML structure as the existing FAQ section.
+3.  **Replace the old FAQ content with the new content:** Use the `apply_diff` tool to replace the old FAQ items with the new FAQ items.
+4.  **Present the result to the user:** Use the `attempt_completion` tool to present the result to the user.
 
 **Mermaid Diagram:**
 
 ```mermaid
-graph TD
-    A[Read styles.css] --> B{List files in tpl/};
-    B --> C{For each file in tpl/};
-    C --> D[Read file content];
-    D --> E[Construct <style> tag];
-    E --> F[Insert <style> tag at beginning of file];
-    F --> C;
-    C --> G{Delete styles.css};
-    G --> H[Attempt Completion];
+graph LR
+    A[Analyze existing HTML structure] --> B(Prepare new FAQ content);
+    B --> C{Replace old FAQ content with new content};
+    C --> D(Present result to user);

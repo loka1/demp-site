@@ -50,6 +50,14 @@
     margin: 1rem 0;
 }
 
+.highlighted-text {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.highlighted-text:hover {
+    color: var(--secondary-color);
+}
 </style>
 <section id="about" class="about">
     <div class="container">
@@ -58,7 +66,7 @@
             <div class="col-md-6">
                 <div class="about-text">
                     <p>
-                        نحن في شركة دلبا الصناعية بدأنا رحلتنا عام 2006 من مدينة الخرج، بدافع من رؤيتنا لتقديم حلول صناعية تواكب تطلعات السوق الزراعي المحلي. انطلقنا بإنتاج صناديق الخضار وصواني التشتيل لتلبية احتياجات شركائنا في القطاع الزراعي، ومع مرور السنوات توسعنا بخطى واثقة نحو مجالات جديدة، كان أبرزها تصنيع المواد العازلة باستخدام مادة البوليسترين (EPS).
+                        نحن في <strong class="highlighted-text">شركة دلبا الصناعية</strong> بدأنا رحلتنا عام 2006 من مدينة الخرج، بدافع من رؤيتنا لتقديم حلول صناعية تواكب تطلعات السوق الزراعي المحلي. انطلقنا بإنتاج صناديق الخضار وصواني التشتيل لتلبية احتياجات شركائنا في القطاع الزراعي، ومع مرور السنوات توسعنا بخطى واثقة نحو مجالات جديدة، كان أبرزها تصنيع المواد العازلة باستخدام مادة البوليسترين (EPS).
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
@@ -79,15 +87,29 @@
                             <br>
                             <span>شريك نجاح</span>
                         </div>
+                        <div class="stat-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="counter">24/7</span>
+                            <br>
+                            <span>دعم فني</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-video">
-                    <video id="about-video" class="lazy" preload="none" controls width="400" height="300" poster="/images/about/video-placeholder.jpg">
+                    <video id="about-video" class="lazy" preload="none" width="400" height="300" poster="/images/about/video-placeholder.jpg" style="controls: none; cursor: pointer;">
                         <source src="/images/about/WhatsApp Video 2025-04-16 at 10.59.43 AM.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <script>
+                        document.getElementById('about-video').addEventListener('click', function() {
+                            var video = this;
+                            video.controls = true;
+                            video.load();
+                            video.play();
+                        });
+                    </script>
                 </div>
             </div>
             

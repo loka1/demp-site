@@ -2,8 +2,8 @@
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 77, 64, 0.8), rgba(0, 77, 64, 0.8)),
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background: linear-gradient(rgba(0, 77, 64, 0.8), rgba(0, 77, 64, 0.8));
+                /* url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -133,22 +133,28 @@
 </style>
 <section id="home" class="hero">
     <div class="slider">
-        <div class="slide">
+        <div class="slide" data-image="images/slider/1.jpg">
             <div class="slide-layer">
-                <h1>مجموعة دلبا - الشريحة 1</h1>
-                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 1</p>
+                <h1>عزل حراري عالي الجودة بمعايير أمريكية وسعودية</h1>
+                <p>نقدم حلول عزل حراري متطورة تتوافق مع أعلى المعايير.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide" data-image="images/slider/2.jpg">
             <div class="slide-layer">
-                <h1>مجموعة دلبا - الشريحة 2</h1>
-                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 2</p>
+                <h1>صناديق تعبئة مبتكرة تلبي احتياجك الزراعي</h1>
+                <p>صناديق تعبئة مصممة خصيصًا لتلبية احتياجات القطاع الزراعي.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide" data-image="images/slider/3.jpg">
             <div class="slide-layer">
-                <h1>مجموعة دلبا - الشريحة 3</h1>
-                <p>رواد التطور الاقتصادي في المملكة العربية السعودية - الشريحة 3</p>
+                <h1>منتجات مقاومة للحريق بتقنيات تصنيع متقدمة</h1>
+                <p>منتجات عزل وحماية متطورة بتقنيات تصنيع مبتكرة.</p>
+                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
             </div>
         </div>
         <div class="slider-buttons">
@@ -167,8 +173,13 @@
         let currentSlide = 0;
 
         function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            const slide = slides[index];
+            slide.classList.add('active');
+            const image = slide.dataset.image;
+            slide.style.backgroundImage = `url('${image}')`;
         }
 
         function nextSlide() {

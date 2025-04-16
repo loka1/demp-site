@@ -11,6 +11,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     padding: 20px;
+    justify-content: center;
 }
 
 .service-card {
@@ -43,6 +44,7 @@
     padding: 2rem;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .service-card h3 {
@@ -57,15 +59,21 @@
     content: '';
     position: absolute;
     bottom: 0;
-    right: 0;
-    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
     height: 3px;
     background: var(--primary-color);
     transition: width 0.3s ease;
 }
-
 .service-card:hover h3::after {
-    width: 100px;
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(0%);
+
 }
 
 .service-card p {
@@ -76,27 +84,34 @@
 
 </style><section id="services" class="services">
     <div class="container">
-        <h2>خدماتنا</h2>
+        <h2>المميزات</h2>
         <div class="services-grid">
             <div class="service-card">
-                <img src="images/U.png" alt="خدمة 1" loading="lazy" width="400" height="300">
                 <div class="content">
-                    <h3>خدمة 1</h3>
-                    <p>وصف تفصيلي للخدمة الأولى وكيف يمكننا مساعدتك</p>
+                    <i class="fas fa-box-open fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>منتجات عزل متنوعة</h3>
+                    <p>نقدم مجموعة واسعة من منتجات العزل لتلبية جميع احتياجاتك.</p>
                 </div>
             </div>
             <div class="service-card">
-                <img src="images/U.png" alt="خدمة 2" loading="lazy" width="400" height="300">
                 <div class="content">
-                    <h3>خدمة 2</h3>
-                    <p>وصف تفصيلي للخدمة الثانية وكيف يمكننا مساعدتك</p>
+                    <i class="fas fa-truck fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>توصيل سريع لجميع المناطق</h3>
+                    <p>نضمن توصيل سريع وموثوق لجميع منتجاتنا إلى أي مكان.</p>
                 </div>
             </div>
             <div class="service-card">
-                <img src="images/U.png" alt="خدمة 3" loading="lazy" width="400" height="300">
                 <div class="content">
-                    <h3>خدمة 3</h3>
-                    <p>وصف تفصيلي للخدمة الثالثة وكيف يمكننا مساعدتك</p>
+                    <i class="fas fa-tags fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>أسعار منافسة وعروض للمشاريع الكبيرة</h3>
+                    <p>نقدم أسعارًا تنافسية وعروضًا خاصة للمشاريع الكبيرة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="content">
+                    <i class="fas fa-comments fa-3x mb-3" style="color: var(--primary-color);"></i>
+                    <h3>استشارات مجانية للمشاريع الجديدة</h3>
+                    <p>نقدم استشارات مجانية لمساعدتك في التخطيط لمشاريعك الجديدة.</p>
                 </div>
             </div>
         </div>
