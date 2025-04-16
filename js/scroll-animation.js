@@ -1,3 +1,12 @@
+// Lazy load video
+const aboutVideo = document.getElementById('about-video');
+
+aboutVideo.addEventListener('click', function() {
+  if (this.classList.contains('lazy')) {
+    this.classList.remove('lazy');
+    this.load();
+  }
+});
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.animate-on-scroll');
 
@@ -20,10 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (window.innerWidth >= 992) {
                     section.classList.add('animate__animated', animationClass);
                 }
-    section.classList.remove('animate-on-scroll');
-            } else {
-                section.classList.remove('animate__animated', animationClass);
-            }
+                section.classList.remove('animate-on-scroll');
+            } 
         });
     }
 

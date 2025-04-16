@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -56,6 +58,67 @@ nav {
 
 .nav-links li {
     margin-right: 30px;
+}
+
+/* About Section - Video */
+.about-content {
+    /* display: flex;  Remove flex display */
+    align-items: center;
+    /* justify-content: space-between;  Remove justify-content */
+    flex-wrap: wrap; /* Add flex-wrap for responsiveness */
+}
+
+.about-video {
+    /* width: 45%; Adjust as needed */
+    padding: 20px;
+}
+
+.about-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    /* width: 55%; Adjust as needed */
+    text-align: right; /* Align text to the right */
+    padding: 20px;
+}
+
+/* Style adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-video {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Add general row and col classes for the layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    width: 50%;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
 }
 
 .nav-links a {
@@ -147,51 +210,11 @@ section h2::after {
     animation-duration: 1s;
 }
 
-/* Add fade-in animation to cards */
-.service-card,
-.project-card,
-.news-card,
-.testimonial-card {
-    opacity: 1;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-}
-
-.service-card.animate__fadeInUp,
-.project-card.animate__fadeInUp,
-.news-card.animate__fadeInUp,
-.testimonial-card.animate__fadeInUp {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Enhance hover effects */
-.service-card:hover,
-.project-card:hover,
-.news-card:hover,
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
 /* Add smooth scroll behavior */
 html {
     scroll-behavior: smooth;
 }
 
-/* Loading animation for images */
-img {
-    transition: opacity 0.3s;
-}
-
-img[loading] {
-    /* opacity: 0; */
-}
-
-img.loaded {
-    opacity: 1;
-    animation: fadeIn 1s ease-in-out;
-}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -232,31 +255,4 @@ img.loaded {
     }
 }
 
-/* Import Animate.css */
-@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
-
-/* Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-img {}
 

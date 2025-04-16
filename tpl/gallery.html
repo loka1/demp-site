@@ -18,6 +18,7 @@
 .gallery-item {
     margin: 10px;
 }
+
 .gallery-item img:hover {
     transform: scale(1.05);
 }
@@ -28,16 +29,17 @@
 
 /* Slideshow Styles */
 .slideshow-overlay {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Prevent scroll */
 }
 
 .slideshow-content {
@@ -85,7 +87,6 @@
 .navigation-buttons button:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
-
 </style>
 <section id="gallery" class="gallery">
     <div class="container">
@@ -118,26 +119,16 @@
         </div>
     </div>
 </section>
-<div id="slideshow-overlay" class="slideshow-overlay">
-    <span class="close-button">&times;</span>
-    <div class="slideshow-content">
-        <img class="slideshow-image" src="" alt="Slideshow Image">
-        <div class="navigation-buttons">
-            <button class="prev-button">&lt;</button>
-            <button class="next-button">&gt;</button>
-        </div>
-    </div>
-</div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const galleryImages = document.querySelectorAll('.gallery-item img');
-        const slideshowOverlay = document.getElementById('slideshow-overlay');
-        const slideshowImage = document.querySelector('.slideshow-image');
-        const closeButton = document.querySelector('.close-button');
-        const prevButton = document.querySelector('.prev-button');
-        const nextButton = document.querySelector('.next-button');
         let currentImageIndex = 0;
         let images = [];
+        let slideshowOverlay;
+        let slideshowImage;
+        let closeButton;
+        let prevButton;
+        let nextButton;
 
         galleryImages.forEach((img, index) => {
             images.push(img.src);
@@ -147,31 +138,77 @@
             });
         });
 
+        function createSlideshow() {
+            slideshowOverlay = document.createElement('div');
+            slideshowOverlay.id = 'slideshow-overlay';
+            slideshowOverlay.classList.add('slideshow-overlay');
+
+            closeButton = document.createElement('span');
+            closeButton.classList.add('close-button');
+            closeButton.innerHTML = '&times;';
+
+            const slideshowContent = document.createElement('div');
+            slideshowContent.classList.add('slideshow-content');
+
+            slideshowImage = document.createElement('img');
+            slideshowImage.classList.add('slideshow-image');
+            slideshowImage.alt = 'Slideshow Image';
+
+            const navigationButtons = document.createElement('div');
+            navigationButtons.classList.add('navigation-buttons');
+
+            prevButton = document.createElement('button');
+            prevButton.classList.add('prev-button');
+            prevButton.innerHTML = '<';
+
+            nextButton = document.createElement('button');
+            nextButton.classList.add('next-button');
+            nextButton.innerHTML = '>';
+
+            navigationButtons.appendChild(prevButton);
+            navigationButtons.appendChild(nextButton);
+
+            slideshowContent.appendChild(slideshowImage);
+            slideshowContent.appendChild(navigationButtons);
+            slideshowOverlay.appendChild(closeButton);
+            slideshowOverlay.appendChild(slideshowContent);
+
+            document.body.appendChild(slideshowOverlay);
+
+            closeButton.addEventListener('click', closeSlideshow);
+            prevButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showSlideshow(currentImageIndex);
+            });
+            nextButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showSlideshow(currentImageIndex);
+            });
+            slideshowOverlay.addEventListener('click', (event) => {
+                if (event.target === slideshowOverlay) {
+                    closeSlideshow();
+                }
+            });
+        }
+
         function showSlideshow(index) {
+            if (!slideshowOverlay) {
+                createSlideshow();
+            }
             slideshowImage.src = images[index];
             slideshowOverlay.style.display = 'flex';
+            document.body.classList.add('slideshow-active');
+            document.querySelector('nav.navbar').style.display = 'none';
+            document.querySelector('footer.footer').style.display = 'none';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeSlideshow() {
             slideshowOverlay.style.display = 'none';
+            document.body.classList.remove('slideshow-active');
+            document.querySelector('nav.navbar').style.display = 'block';
+            document.querySelector('footer.footer').style.display = 'block';
+            document.body.style.overflow = 'auto';
         }
-
-        closeButton.addEventListener('click', closeSlideshow);
-
-        prevButton.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            showSlideshow(currentImageIndex);
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            showSlideshow(currentImageIndex);
-        });
-
-        slideshowOverlay.addEventListener('click', (event) => {
-            if (event.target === slideshowOverlay) {
-                closeSlideshow();
-            }
-        });
     });
 </script>

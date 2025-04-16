@@ -19,19 +19,19 @@
     <?php include 'tpl/hero.html'; ?>
     <?php
     $sections = [
-        'tpl/about.html' => 'animate__lightSpeedInRight',
-        'tpl/vision.html' => 'animate__lightSpeedInLeft',
-        'tpl/mission.html' => 'animate__lightSpeedInRight',
-        'tpl/services.html' => 'animate__lightSpeedInLeft',
-        'tpl/projects.html' => 'animate__lightSpeedInRight',
-        'tpl/partners.html' => 'animate__lightSpeedInLeft',
-        'tpl/news.html' => 'animate__lightSpeedInRight',
-        'tpl/gallery.html' => 'animate__lightSpeedInLeft',
-        'tpl/stats.html' => 'animate__lightSpeedInRight',
-        'tpl/contact.html' => 'animate__lightSpeedInLeft',
-        'tpl/testimonials.html' => 'animate__lightSpeedInRight',
-        'tpl/faq.html' => 'animate__lightSpeedInLeft',
-        'tpl/footer.html' => 'animate__lightSpeedInRight',
+        'tpl/about.html' => '1animate__fadeInLeft',
+        'tpl/vision.html' => '1animate__fadeInRight',
+        'tpl/mission.html' => '1animate__zoomIn',
+        'tpl/services.html' => '1animate__fadeInLeft',
+        'tpl/projects.html' => '1animate__fadeInRight',
+        'tpl/partners.html' => '1animate__zoomIn',
+        'tpl/news.html' => '1animate__fadeInLeft',
+        'tpl/gallery.html' => '1animate__fadeInRight',
+        'tpl/stats.html' => '1animate__zoomIn',
+        'tpl/contact.html' => '1animate__fadeInLeft',
+        'tpl/testimonials.html' => '1animate__fadeInRight',
+        'tpl/faq.html' => '1animate__zoomIn',
+        'tpl/footer.html' => '1animate__fadeInLeft',
     ];
 
     foreach ($sections as $template => $animation) {
