@@ -1,3 +1,82 @@
+<style>
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 100px 0;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.testimonial-content {
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-content i {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    opacity: 0.2;
+    position: absolute;
+    top: -20px;
+    right: -10px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.testimonial-author img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid var(--primary-color);
+    padding: 4px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-author img {
+    transform: scale(1.1);
+}
+
+.testimonial-author h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.testimonial-author p {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+</style>
 <section id="testimonials" class="testimonials py-5">
     <div class="container">
         <h2 class="text-center mb-5">آراء عملائنا</h2>
