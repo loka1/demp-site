@@ -29,6 +29,7 @@
         'tpl/gallery.html' => '1animate__fadeInRight',
         // 'tpl/stats.html' => '1animate__zoomIn',
         'tpl/contact.html' => '1animate__fadeInLeft',
+        'tpl/map.html' => '1animate__fadeInRight',
         // 'tpl/testimonials.html' => '1animate__fadeInRight',
         'tpl/faq.html' => '1animate__zoomIn',
         'tpl/footer.html' => '1animate__fadeInLeft',

@@ -153,6 +153,66 @@
         text-align: center;
     }
 }
+.go-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #607D8B;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.go-to-top:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+
+
+.floating-button {
+    position: fixed;
+    bottom: 80px; /* Adjusted bottom position */
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #607D8B;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+    margin-bottom: 10px; /* Space between buttons */
+}
+
+.floating-button:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Specific styles for WhatsApp button */
+.whatsapp-button {
+    bottom: 140px; /* Position above the phone button */
+    background-color: #25D366; /* WhatsApp green */
+}
+
+/* Specific styles for Phone button */
+.phone-button {
+    bottom: 200px; /* Position above the go-to-top button */
+    background-color: #007bff; /* A typical blue color */
+}
 
 </style>
 <footer class="footer">
@@ -184,10 +244,10 @@
                             <a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City"><i class="fas fa-map-marker-alt"></i> المدينة الصناعية بالخرج ( مدن )</a>
                         </li>
                         <li>
-                            <a href="tel:+966556865245"><i class="fas fa-phone"></i> +966 55 686 5245</a>
+                            <a href="tel:+966556865245"><i class="fas fa-phone"></i> 5425 686 55 669+</a>
                         </li>
                         <li>
-                            <a href="https://wa.me/966556865245"><i class="fab fa-whatsapp"></i> +966 55 686 5245</a>
+                            <a href="https://wa.me/966556865245"><i class="fab fa-whatsapp"></i> 5425 686 55 669+</a>
                         </li>
                         <li>
                             <a href="mailto:Sales.xps@dalba.com.sa"><i class="fas fa-envelope"></i> Sales.xps@dalba.com.sa</a>
@@ -208,6 +268,9 @@
                         <a href="https://www.youtube.com/@DalbaindustrialCo" class="social-icon"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.instagram.com/dalba.poly" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
+                    <a href="https://wa.me/966556865245" class="social-icon floating-button whatsapp-button"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+966556865245" class="social-icon floating-button phone-button"><i class="fas fa-phone"></i></a>
+                    <a href="#home" class="go-to-top floating-button"><i class="fas fa-arrow-up"></i></a>
                 
                 
             </div>

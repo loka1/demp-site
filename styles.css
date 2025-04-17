@@ -139,6 +139,8 @@ nav {
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .navbar.scrolled {
