@@ -71,11 +71,12 @@ nav {
 .about-video {
     /* width: 45%; Adjust as needed */
     padding: 20px;
+    text-align: center;
 }
 
 .about-video video {
     width: 100%;
-    height: auto;
+    height: 500px;
     border-radius: 10px;
 }
 
