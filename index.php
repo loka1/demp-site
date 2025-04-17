@@ -27,7 +27,7 @@
         // 'tpl/partners.html' => '1animate__zoomIn',
         'tpl/news.html' => '1animate__fadeInLeft',
         'tpl/gallery.html' => '1animate__fadeInRight',
-        'tpl/stats.html' => '1animate__zoomIn',
+        // 'tpl/stats.html' => '1animate__zoomIn',
         'tpl/contact.html' => '1animate__fadeInLeft',
         // 'tpl/testimonials.html' => '1animate__fadeInRight',
         'tpl/faq.html' => '1animate__zoomIn',
