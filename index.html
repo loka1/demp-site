@@ -126,6 +126,20 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.custom-btn {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    background-color: navy !important;
+    border-color: navy !important;
+}
+.custom-btn2 {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    background-color: green !important;
+    border-color: green !important;
+}
+
+
 /* Hero Slider Styles */
 .hero .slider {
     position: relative;
@@ -197,26 +211,26 @@
     <div class="slider">
         <div class="slide" data-image="images/slider/1.jpg">
             <div class="slide-layer">
-                <h1>عزل حراري عالي الجودة بمعايير أمريكية وسعودية</h1>
+                <h1>عزل حراري عالي الجودة بمعايير ومواصفات سعودية</h1>
                 <p>نقدم حلول عزل حراري متطورة تتوافق مع أعلى المعايير.</p>
-                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
-                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+                <a href="tel:+966556865245" class="btn btn-primary custom-btn"><i class="fas fa-phone"></i> اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success custom-btn2"><i class="fab fa-whatsapp"></i> واتس اب</a>
             </div>
         </div>
         <div class="slide" data-image="images/slider/2.jpg">
             <div class="slide-layer">
                 <h1>صناديق تعبئة مبتكرة تلبي احتياجك الزراعي</h1>
                 <p>صناديق تعبئة مصممة خصيصًا لتلبية احتياجات القطاع الزراعي.</p>
-                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
-                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+                <a href="tel:+966556865245" class="btn btn-primary custom-btn"><i class="fas fa-phone"></i> اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success custom-btn2"><i class="fab fa-whatsapp"></i> واتس اب</a>
             </div>
         </div>
         <div class="slide" data-image="images/slider/3.jpg">
             <div class="slide-layer">
                 <h1>منتجات مقاومة للحريق بتقنيات تصنيع متقدمة</h1>
                 <p>منتجات عزل وحماية متطورة بتقنيات تصنيع مبتكرة.</p>
-                <a href="tel:+966556865245" class="btn btn-primary">اتصل بنا</a>
-                <a href="https://wa.me/966556865245" class="btn btn-success">WhatsApp</a>
+                <a href="tel:+966556865245" class="btn btn-primary custom-btn"><i class="fas fa-phone"></i> اتصل بنا</a>
+                <a href="https://wa.me/966556865245" class="btn btn-success custom-btn2"><i class="fab fa-whatsapp"></i> واتس اب</a>
             </div>
         </div>
         <div class="slider-buttons">
@@ -960,7 +974,7 @@
         function closeSlideshow() {
             slideshowOverlay.style.display = 'none';
             document.body.classList.remove('slideshow-active');
-            document.querySelector('nav.navbar').style.display = 'block';
+            document.querySelector('nav.navbar').style.display = 'flex';
             document.querySelector('footer.footer').style.display = 'block';
             document.body.style.overflow = 'auto';
         }
@@ -998,6 +1012,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    direction: ltr;
 }
 
 .contact-item:hover {
@@ -1159,7 +1174,32 @@
             </div>
         </div>
     </div>
-</section><section class="animate-on-scroll" data-animation="1animate__zoomIn"><style>
+</section><section class="animate-on-scroll" data-animation="1animate__fadeInRight"><style>
+
+/* Map Section */
+.map {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 20px;
+    justify-content: center;
+}
+
+
+</style><section id="map" class="map">
+    <div class="container">
+        <h2>موقعنا</h2>
+        <div class="map-grid">
+            <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3003.9765987382575!2d46.72616040820345!3d24.774829873164876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQ2JzI5LjMiTiA0NsKwNDMnMzMuNCJF!5e1!3m2!1sar!2seg!4v1740998393299!5m2!1sar!2seg" width="100%" height="450" allowfullscreen="allowfullscreen"></iframe>
+           
+        </div>
+    </div>
+</section></section><section class="animate-on-scroll" data-animation="1animate__zoomIn"><style>
 
 /* FAQ Section */
 .faq {
@@ -1444,6 +1484,66 @@
         text-align: center;
     }
 }
+.go-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #607D8B;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.go-to-top:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+
+
+.floating-button {
+    position: fixed;
+    bottom: 80px; /* Adjusted bottom position */
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #607D8B;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+    margin-bottom: 10px; /* Space between buttons */
+}
+
+.floating-button:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Specific styles for WhatsApp button */
+.whatsapp-button {
+    bottom: 140px; /* Position above the phone button */
+    background-color: #25D366; /* WhatsApp green */
+}
+
+/* Specific styles for Phone button */
+.phone-button {
+    bottom: 200px; /* Position above the go-to-top button */
+    background-color: #007bff; /* A typical blue color */
+}
 
 </style>
 <footer class="footer">
@@ -1475,10 +1575,10 @@
                             <a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City"><i class="fas fa-map-marker-alt"></i> المدينة الصناعية بالخرج ( مدن )</a>
                         </li>
                         <li>
-                            <a href="tel:+966556865245"><i class="fas fa-phone"></i> +966 55 686 5245</a>
+                            <a href="tel:+966556865245"><i class="fas fa-phone"></i> 5425 686 55 669+</a>
                         </li>
                         <li>
-                            <a href="https://wa.me/966556865245"><i class="fab fa-whatsapp"></i> +966 55 686 5245</a>
+                            <a href="https://wa.me/966556865245"><i class="fab fa-whatsapp"></i> 5425 686 55 669+</a>
                         </li>
                         <li>
                             <a href="mailto:Sales.xps@dalba.com.sa"><i class="fas fa-envelope"></i> Sales.xps@dalba.com.sa</a>
@@ -1499,6 +1599,9 @@
                         <a href="https://www.youtube.com/@DalbaindustrialCo" class="social-icon"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.instagram.com/dalba.poly" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
+                    <a href="https://wa.me/966556865245" class="social-icon floating-button whatsapp-button"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+966556865245" class="social-icon floating-button phone-button"><i class="fas fa-phone"></i></a>
+                    <a href="#home" class="go-to-top floating-button"><i class="fas fa-arrow-up"></i></a>
                 
                 
             </div>
