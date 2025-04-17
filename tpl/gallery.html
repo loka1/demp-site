@@ -25,6 +25,7 @@
 
 .gallery-item {
     margin: 10px;
+    display: none; /* Hide initially */
 }
 
 .gallery-item img:hover {
@@ -79,10 +80,12 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+    position: absolute;
+    top: 50%;
 }
 
 .navigation-buttons button {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #333;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -93,11 +96,11 @@
 }
 
 .navigation-buttons button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #009688;
 }
 </style>
 <section id="gallery" class="gallery">
-    <div class="container">
+    <div class="container" style="    position: relative;">
         <h2>معرض الشهادت</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -121,7 +124,16 @@
             <div class="gallery-item">
                 <img src="images/cer/7.jpg" alt="صورة 7" loading="lazy" style="transition: transform 0.3s ease;">
             </div>
-            
+            <div class="gallery-item">
+                <img src="images/cer/3.jpg" alt="صورة 3" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+            <div class="gallery-item">
+                <img src="images/cer/4.jpg" alt="صورة 4" loading="lazy" style="transition: transform 0.3s ease;">
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <button class="prev-button">&lt;</button>
+            <button class="next-button">&gt;</button>
         </div>
     </div>
 </section>
@@ -133,6 +145,7 @@
         let slideshowOverlay;
         let slideshowImage;
         let closeButton;
+        let currentStartIndex = 0;
         let prevButton;
         let nextButton;
 
@@ -143,6 +156,28 @@
                 showSlideshow(currentImageIndex);
             });
         });
+
+        function showGalleryImages() {
+            galleryImages.forEach((img, index) => {
+                if (index >= currentStartIndex && index < currentStartIndex + 3) {
+                    img.parentElement.style.display = 'block';
+                } else {
+                    img.parentElement.style.display = 'none';
+                }
+            });
+        }
+
+        document.querySelector('.prev-button').addEventListener('click', () => {
+            currentStartIndex = (currentStartIndex - 3 + images.length) % images.length;
+            showGalleryImages();
+        });
+
+        document.querySelector('.next-button').addEventListener('click', () => {
+            currentStartIndex = (currentStartIndex + 3) % images.length;
+            showGalleryImages();
+        });
+
+        showGalleryImages();
 
         function createSlideshow() {
             slideshowOverlay = document.createElement('div');
