@@ -1,7 +1,7 @@
 <?php
 
 // Initialize cURL session
-$ch = curl_init("http://127.0.0.1:7152/index.php");
+$ch = curl_init("http://127.0.0.1:1715/index.php");
 
 // Set cURL options
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

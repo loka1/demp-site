@@ -1,42 +1,169 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
+<nav class="custom-navbar">
+    <div class="navbar-container">
         <a class="navbar-brand" href="#">
             <img src="images/U.png" alt="Dalba Group Logo" height="40">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: space-between;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#home">الرئيسية</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">من نحن</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">المميزات</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">منتجاتنا</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#partners">شركاؤنا</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">الأخبار</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">معرض الشهادت
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">اتصل بنا</a>
-                </li>
+        <div class="navbar-menu">
+            <ul class="navbar-links">
+                <li><a class="active" href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">المميزات</a></li>
+                <li><a href="#news">منتجاتنا</a></li>
+                <li><a href="#gallery">معرض الشهادت</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
             </ul>
-            <div class="d-flex align-items-center" style="direction: ltr;">
-                <a href="tel:+966556865245" class="nav-link"><i class="fas fa-phone"></i> +966 55 686 5245</a>
+            <div class="navbar-contact" style="direction: ltr;">
+                <a href="tel:+966556865245"><i class="fas fa-phone"></i> +966 55 686 5245</a>
             </div>
         </div>
     </div>
 </nav>
+
+<style>
+/* Desktop styles (similar to Bootstrap) */
+.custom-navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 1.5rem;
+}
+
+.navbar-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.navbar-links a.active {
+    color: #007bff;
+}
+
+.navbar-contact a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Mobile styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: relative;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    left: 0;
+}
+
+.hamburger:before {
+    top: -8px;
+}
+
+.hamburger:after {
+    bottom: -8px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        z-index: 1002;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+    
+    .navbar-menu.active {
+        transform: translateX(0);
+    }
+    
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .navbar-links li {
+        margin: 1rem 0;
+    }
+    
+    .navbar-links a {
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .navbar-contact a {
+        color: white;
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.navbar-menu');
+    
+    toggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+</script>

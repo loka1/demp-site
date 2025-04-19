@@ -15,48 +15,175 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
+    <nav class="custom-navbar">
+    <div class="navbar-container">
         <a class="navbar-brand" href="#">
             <img src="images/U.png" alt="Dalba Group Logo" height="40">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: space-between;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#home">الرئيسية</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">من نحن</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">المميزات</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">منتجاتنا</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#partners">شركاؤنا</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">الأخبار</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">معرض الشهادت
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">اتصل بنا</a>
-                </li>
+        <div class="navbar-menu">
+            <ul class="navbar-links">
+                <li><a class="active" href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">المميزات</a></li>
+                <li><a href="#news">منتجاتنا</a></li>
+                <li><a href="#gallery">معرض الشهادت</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
             </ul>
-            <div class="d-flex align-items-center" style="direction: ltr;">
-                <a href="tel:+966556865245" class="nav-link"><i class="fas fa-phone"></i> +966 55 686 5245</a>
+            <div class="navbar-contact" style="direction: ltr;">
+                <a href="tel:+966556865245"><i class="fas fa-phone"></i> +966 55 686 5245</a>
             </div>
         </div>
     </div>
-</nav>    <style>
+</nav>
+
+<style>
+/* Desktop styles (similar to Bootstrap) */
+.custom-navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 1.5rem;
+}
+
+.navbar-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.navbar-links a.active {
+    color: #007bff;
+}
+
+.navbar-contact a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Mobile styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: relative;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    left: 0;
+}
+
+.hamburger:before {
+    top: -8px;
+}
+
+.hamburger:after {
+    bottom: -8px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        z-index: 1002;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+    
+    .navbar-menu.active {
+        transform: translateX(0);
+    }
+    
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .navbar-links li {
+        margin: 1rem 0;
+    }
+    
+    .navbar-links a {
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .navbar-contact a {
+        color: white;
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.navbar-menu');
+    
+    toggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+</script>    <style>
 
 /* Hero Section */
 .hero {
@@ -129,14 +256,14 @@
 .custom-btn {
     font-size: 1.2rem;
     padding: 15px 35px;
-    background-color: navy !important;
-    border-color: navy !important;
+    background-color: #ed6d07 !important;
+    border-color: #ed6d07 !important;
 }
 .custom-btn2 {
     font-size: 1.2rem;
     padding: 15px 35px;
-    background-color: green !important;
-    border-color: green !important;
+    background-color: #ed6d07 !important;
+    border-color: #ed6d07 !important;
 }
 
 
@@ -1125,7 +1252,7 @@
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>العنوان</h3>
-                    <p><a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City">المدينة الصناعية بالخرج ( مدن )</a></p>
+                    <p><a href="https://maps.app.goo.gl/qFu9buGZozfALNgd8">المدينة الصناعية بالخرج ( مدن )</a></p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
@@ -1195,7 +1322,7 @@
     <div class="container">
         <h2>موقعنا</h2>
         <div class="map-grid">
-            <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3003.9765987382575!2d46.72616040820345!3d24.774829873164876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQ2JzI5LjMiTiA0NsKwNDMnMzMuNCJF!5e1!3m2!1sar!2seg!4v1740998393299!5m2!1sar!2seg" width="100%" height="450" allowfullscreen="allowfullscreen"></iframe>
+            <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3003.9765987382575!2d46.7261604!3d24.7748299!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ2JzI5LjMiTiA0NsKwNDMnMzMuNCJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" width="100%" height="450" allowfullscreen="allowfullscreen"></iframe>
            
         </div>
     </div>
@@ -1572,7 +1699,7 @@
                     <h4>معلومات الاتصال</h4>
                     <ul>
                         <li>
-                            <a href="https://www.google.com/maps/place/Al+Kharj+Industrial+City"><i class="fas fa-map-marker-alt"></i> المدينة الصناعية بالخرج ( مدن )</a>
+                            <a href="https://maps.app.goo.gl/qFu9buGZozfALNgd8"><i class="fas fa-map-marker-alt"></i> المدينة الصناعية بالخرج ( مدن )</a>
                         </li>
                         <li>
                             <a href="tel:+966556865245"><i class="fas fa-phone"></i> 5425 686 55 669+</a>
