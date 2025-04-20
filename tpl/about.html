@@ -76,18 +76,10 @@
             </div>
             <div class="col-md-6">
                 <div class="about-video">
-                    <video id="about-video" class="lazy" preload="none"  poster="/images/about/video-placeholder.jpg" style="controls: none; cursor: pointer;">
-                        <source src="/images/about/WhatsApp Video 2025-04-16 at 10.59.43 AM.mp4" type="video/mp4">
+                    <video id="about-video" class="lazy" preload="none" poster="/images/about/video-placeholder.jpg" controls="false" style="cursor: pointer;">
+                        <source src="/images/about/WhatsApp Video 2025-04-16 at 10.59.43 AM.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
                     </video>
-                    <script>
-                        document.getElementById('about-video').addEventListener('click', function() {
-                            var video = this;
-                            video.controls = true;
-                            video.load();
-                            video.play();
-                        });
-                    </script>
                 </div>
             </div>
             

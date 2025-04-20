@@ -184,39 +184,3 @@
         </div>
     </div>
 </section>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            const slide = slides[index];
-            slide.classList.add('active');
-            const image = slide.dataset.image;
-            slide.style.backgroundImage = `url('${image}')`;
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Initial slide
-        showSlide(currentSlide);
-
-        // Auto slide every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Make nextSlide and prevSlide globally accessible
-        window.nextSlide = nextSlide;
-        window.prevSlide = prevSlide;
-    });
-</script>
