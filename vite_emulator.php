@@ -49,8 +49,9 @@ class HtmlBuilder {
     }
 
     public function addSection($path, $animation) {
-        $this->addTemplate($path);
-        $this->output .= "<section class=\"animate-on-scroll\" data-animation=\"$animation\">";
+        // $this->output .= "<section class=\"animate-on-scroll\" data-animation=\"$animation\">";
+        $this->addTemplate(path: $path);
+        // $this->output .= "</section>";
         return $this;
     }
 
