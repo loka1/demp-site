@@ -58,7 +58,6 @@
                 $('.navbar').removeClass('scrolled');
             }
         });
-
         // Counter animation
         $('.counter').counterUp({
             delay: 10,
